@@ -8,10 +8,11 @@ all: info/init_ok
 	dab exec update-locale LANG="en_US.UTF-8"
 	dab exec dpkg-reconfigure -f noninteractive locales
 	
-	dab install tmux htop git vim
+	dab install tmux htop git vim curl
 
 	if [ -f "../files/.vimrc" ]; then cp ../files/.vimrc ${BASEDIR}/root/.vimrc; fi
 	if [ -f "../files/.tmux.conf" ]; then cp ../files/.tmux.conf ${BASEDIR}/root/.tmux.conf; fi
+	if [ -f "../files/.config/htop/htoprc" ]; then cp ../files/.config/htop/htoprc ${BASEDIR}/root/.config/htop/htoprc; fi
 
 	dab finalize
 
