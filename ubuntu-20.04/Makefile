@@ -12,7 +12,9 @@ all: info/init_ok
 
 	if [ -f "../files/.vimrc" ]; then cp ../files/.vimrc ${BASEDIR}/root/.vimrc; fi
 	if [ -f "../files/.tmux.conf" ]; then cp ../files/.tmux.conf ${BASEDIR}/root/.tmux.conf; fi
-	if [ -f "../files/.config/htop/htoprc" ]; then cp ../files/.config/htop/htoprc ${BASEDIR}/root/.config/htop/htoprc; fi
+	if [ -f "../files/.config/htop/htoprc" ]; then mkdir -p ${BASEDIR}/root/.config/htop && cp ../files/.config/htop/htoprc ${BASEDIR}/root/.config/htop/htoprc; fi
+
+	sed -i 's/xterm-color) color/xterm-color|*-256color) color/' ${BASEDIR}/root/.bashrc
 
 	dab finalize
 
