@@ -2,6 +2,9 @@ BASEDIR:=$(shell dab basedir)
 
 all: info/init_ok
 	dab bootstrap
+
+	mkdir -p ${BASEDIR}/etc/systemd/system-preset
+	cp systemd-presets ${BASEDIR}/etc/systemd/system-preset/00-pve-template.preset
 	
 	echo "en_US.UTF-8 UTF-8" > ${BASEDIR}/etc/locale.gen
 	dab exec locale-gen
