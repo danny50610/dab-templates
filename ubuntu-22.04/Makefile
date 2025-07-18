@@ -19,7 +19,7 @@ all: info/init_ok
 
 	sed -i 's/xterm-color) color/xterm-color|*-256color) color/' ${BASEDIR}/root/.bashrc
 
-	dab finalize
+	dab finalize --compressor zstd-max
 
 info/init_ok: dab.conf
 	dab init
