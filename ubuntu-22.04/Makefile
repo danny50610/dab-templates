@@ -9,7 +9,7 @@ all: info/init_ok
 	dab exec dpkg-reconfigure -f noninteractive locales
 	
 	dab install tmux htop git vim curl
-	dab exec apt remove ubuntu-pro-client
+	dab exec apt remove -y ubuntu-pro-client
 
 	if [ -f "../files/.vimrc" ]; then cp ../files/.vimrc ${BASEDIR}/root/.vimrc; fi
 	if [ -f "../files/.tmux.conf" ]; then cp ../files/.tmux.conf ${BASEDIR}/root/.tmux.conf; fi
