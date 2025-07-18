@@ -16,3 +16,7 @@ apt update && apt install dab
 cd ubuntu-20.04
 make
 ```
+## Add template
+```
+mv xxx.tar.gz /var/lib/vz/template/cache/
+```
